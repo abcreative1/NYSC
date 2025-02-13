@@ -3,10 +3,48 @@
    --background-green: #f5fff5;
 }
 
-body {}
+html,
+body {
+   min-width: 320px;
+}
+
+* {
+   font-family: "Poppins";
+}
+
+
+#Hero,
+#Image-gallery,
+#about,
+#How-it-works,
+#Latest-news,
+#Video,
+#Info-section,
+.footer-sections-wrapper {
+   /* Padding for all sections */
+   padding-left: 5%;
+   padding-right: 5%;
+}
 
 .rounded {
    border-radius: 15px;
+}
+
+.green-btn {
+   background-color: green;
+   color: whitesmoke;
+   transition: 0.3s;
+   /* padding: 12px; */
+}
+
+.green-btn:hover {
+   background-color: green;
+   color: whitesmoke;
+   transition: 0.3s;
+}
+
+.green-text {
+   color: green;
 }
 
 /* NAVBAR  */
@@ -27,9 +65,8 @@ body {}
 
 /* NAVBAR ENDS */
 
+
 /* HERO */
-
-
 .hero-wrapper {
    display: flex !important;
    flex-direction: column;
@@ -52,8 +89,8 @@ h6 {
 
 /* HERO ENDS */
 
-/* TOP IMAGE GALLERY */
 
+/* TOP IMAGE GALLERY */
 .image-gallery-wrapper {}
 
 .image-gallery-item {
@@ -100,7 +137,7 @@ h6 {
    }
 
    .image-gallery-item:last-child {
-      margin-right: ;
+      /* margin-right: ; */
    }
 
    .no-right-margin {
@@ -119,11 +156,17 @@ h6 {
 }
 
 .about-left {
-   /* padding-right: 20px !important; */
+   display: flex;
+   justify-content: end;
+   padding-right: 20px;
 }
 
 .about-right {
-   max-width: 500px;
+   max-width: 400px;
+}
+
+.about-right>p {
+   text-align: justify;
 }
 
 #about-image {
@@ -147,6 +190,8 @@ h6 {
 
    .about-left {
       margin-bottom: 20px;
+      justify-content: center;
+      padding-right: 0;
    }
 }
 
@@ -167,14 +212,7 @@ section>h2 {
    padding-top: 20px;
 }
 
-#Hero,
-#Image-gallery,
-#about,
-#How-it-works,
-#Latest-news, #Video, #Info-section{
-   padding-left: 5%;
-   padding-right: 5%;
-}
+
 
 .hiw-wrapper {
    display: grid;
@@ -197,6 +235,12 @@ section>h2 {
 
 .card-title {
    font-size: 20px;
+}
+
+.card-body>.fa {
+   font-size: 60px;
+   color: rgba(0, 128, 0, 0.6);
+   padding-bottom: 10px;
 }
 
 /* For tablets */
@@ -224,13 +268,13 @@ section>h2 {
 
 /* ********* LATEST NEWS ********* */
 
-#Latest-news{
+#Latest-news {
    padding-bottom: 40px;
 }
 
 .news-item-wrapper {
    display: grid;
-   grid-template-columns: auto auto;
+   grid-template-columns: 50% 50%;
    gap: 15px;
 }
 
@@ -241,7 +285,7 @@ section>h2 {
    border-color: #ACE1AF;
    height: 130px;
    width: 100%;
-   padding: 8px;
+   padding: 6px;
    box-sizing: border-box;
 }
 
@@ -267,7 +311,7 @@ section>h2 {
       grid-template-columns: auto;
    }
 
-   .news-item-title{
+   .news-item-title {
       /* font-size: small; */
    }
 }
@@ -275,26 +319,42 @@ section>h2 {
 /* ********* VIDEO ********* */
 
 
-#Video{
-   background-color:var(--background-green);
+#Video {
+   background-color: var(--background-green);
    padding-top: 40px;
    padding-bottom: 40px;
 }
-.videos-wrapper{
+
+.videos-wrapper {
    display: grid;
-   grid-template-columns:  300px 300px 300px;
+   grid-template-columns: 30% 30% 30%;
    border: 20px;
    gap: 15px;
    justify-content: center;
 }
 
-iframe{
+@media (max-width: 576px) {
+   .videos-wrapper {
+      grid-template-columns: 100%;
+   }
+
+   iframe {
+      max-width: 300px;
+   }
+
+   .video-item {
+      display: flex;
+      justify-content: center;
+   }
+}
+
+iframe {
    width: 100%;
    height: 210px;
    border-radius: 20px;
 }
 
-#Info-section{
+#Info-section {
    padding-top: 40px;
    display: grid;
    grid-template-columns: 33.33% 33.33% 33.33%;
@@ -302,20 +362,132 @@ iframe{
    justify-content: center;
 }
 
-.info-heading{
+#Info-section {
+   padding-top: 40px;
+   padding-bottom: 40px;
+   display: grid;
+   grid-template-columns: 33.33% 33.33% 33.33%;
+   gap: 15px;
+   justify-content: center;
+}
+
+.info-heading {
    background-color: green;
    color: white;
    border-radius: 8px;
-   padding: 8px 30px;
+   padding: 8px;
    width: 100%;
-   font-weight: bold;
+   font-weight: 500;
    text-align: center;
 }
 
-.info{
- padding: 10px 8px;
- border-bottom: 1px solid #333;
+.info {
+   padding: 10px 8px;
+   border-bottom: 1px solid #535353;
 }
+
+.info-item {
+   display: flex;
+   flex-direction: column;
+   padding: 12px;
+}
+
+.info-item:last-child {
+   border-bottom: none;
+}
+
+.info-item>a {
+   text-decoration: none;
+   color: black;
+}
+
+#Footer {
+   position: relative;
+   background: url('/assets/images/nysc-2.jpg');
+   background-size: cover;
+   background-position: center;
+   color: white;
+   padding-top: 45px;
+   padding-bottom: 65px;
+}
+
+#Footer::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 128, 0, 0.8);
+   /* Green overlay */
+   z-index: 1;
+   /* Make sure it stays above */
+}
+
+#Footer * {
+   position: relative;
+   z-index: 2;
+   /* Ensure text stays above the overlay */
+}
+
+.footer-item>a {
+   color: white;
+   text-decoration: none;
+   padding-top: 20px;
+}
+
+.footer-item {
+   display: flex;
+   flex-direction: column;
+   padding: 15px;
+   padding-top: 25px;
+}
+
+.footer-sections-wrapper {
+   display: grid;
+   grid-template-columns: 20% 25% 30% 25%;
+}
+
+.fa-facebook-square,
+.fa-twitter-square,
+.fa-instagram {
+   display: inline;
+   padding: 7px;
+   font-size: 25px;
+   transition: 0.3s;
+}
+
+.fa-facebook-square:hover,
+.fa-twitter-square:hover,
+.fa-instagram:hover {
+   color: lightgray;
+}
+
+@media (max-width: 992px) {
+   .footer-sections-wrapper {
+      grid-template-columns: auto;
+   }
+}
+
+@media (max-width: 576px) {
+   #Info-section {
+      padding-top: 40px;
+      display: grid;
+      grid-template-columns: 100%;
+      gap: 15px;
+      justify-content: center;
+   }
+
+   .call-to-action{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+   }
+   .call-to-action *{
+      width: 100%;
+   }
+}
+
 
 /* ************************** */
 
@@ -326,18 +498,8 @@ iframe{
    margin: 0 auto; */
 }
 
-
+/* 
 .text {
    font-size: 1.2rem;
-   /* Scales with the user's default font size  */
-}
-
-html,
-body {
-   min-width: 320px;
-}
-
-.card-body>.fa {
-   font-size: 60px;
-   color: green;
-}
+   /* Scales with the user's default font size  
+} */
