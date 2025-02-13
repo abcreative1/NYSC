@@ -10,6 +10,7 @@ body {
 
 * {
    font-family: "Poppins";
+   transition: 0.3s;
 }
 
 
@@ -34,7 +35,6 @@ body {
    background-color: green;
    color: whitesmoke;
    transition: 0.3s;
-   /* padding: 12px; */
 }
 
 .green-btn:hover {
@@ -94,7 +94,6 @@ h6 {
 .image-gallery-wrapper {}
 
 .image-gallery-item {
-
    height: 200px;
    width: 210px;
    margin-right: 15px;
@@ -161,10 +160,6 @@ h6 {
    padding-right: 20px;
 }
 
-.about-right {
-   max-width: 400px;
-}
-
 .about-right>p {
    text-align: justify;
 }
@@ -180,7 +175,17 @@ h6 {
    padding-top: 20px;
 }
 
-@media (max-width: 480px) {}
+@media (min-width: 768px) {
+   .about-right {
+      max-width: 400px;
+   }
+}
+
+@media (max-width: 768px) {
+   .about-right {
+      max-width: 500px;
+   }
+}
 
 @media (max-width: 992px) {
    .about-us-wrapper {
@@ -333,7 +338,7 @@ section>h2 {
    justify-content: center;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
    .videos-wrapper {
       grid-template-columns: 100%;
    }
@@ -352,14 +357,6 @@ iframe {
    width: 100%;
    height: 210px;
    border-radius: 20px;
-}
-
-#Info-section {
-   padding-top: 40px;
-   display: grid;
-   grid-template-columns: 33.33% 33.33% 33.33%;
-   gap: 15px;
-   justify-content: center;
 }
 
 #Info-section {
@@ -403,7 +400,7 @@ iframe {
 
 #Footer {
    position: relative;
-   background: url('/assets/images/nysc-2.jpg');
+   background: url('nysc-2.jpg');
    background-size: cover;
    background-position: center;
    color: white;
@@ -445,7 +442,7 @@ iframe {
 
 .footer-sections-wrapper {
    display: grid;
-   grid-template-columns: 20% 25% 30% 25%;
+   grid-template-columns: 15% 25% 30% 30%;
 }
 
 .fa-facebook-square,
@@ -463,9 +460,17 @@ iframe {
    color: lightgray;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
    .footer-sections-wrapper {
-      grid-template-columns: auto;
+      grid-template-columns: 100%;
+   }
+
+   #Info-section {
+      padding-top: 40px;
+      display: grid;
+      grid-template-columns: 100%;
+      gap: 15px;
+      justify-content: center;
    }
 }
 
@@ -478,13 +483,15 @@ iframe {
       justify-content: center;
    }
 
-   .call-to-action{
+   .call-to-action {
       display: flex;
       flex-direction: column;
       justify-content: center;
    }
-   .call-to-action *{
+
+   .call-to-action * {
       width: 100%;
+      margin-bottom: 15px;
    }
 }
 
@@ -497,9 +504,3 @@ iframe {
    /* max-width: 1200px;
    margin: 0 auto; */
 }
-
-/* 
-.text {
-   font-size: 1.2rem;
-   /* Scales with the user's default font size  
-} */
