@@ -9,7 +9,7 @@ body {
 }
 
 * {
-   font-family: "Poppins";
+   font-family: "Poppins", Arial, Helvetica, sans-serif;
    transition: 0.3s;
 }
 
@@ -63,6 +63,13 @@ body {
    font-size: 15px;
 }
 
+@media (max-width: 769px) {
+   .navbar-nav {
+      padding-left: 20px;
+      padding-right: 20px;
+   }
+}
+
 
 /* HERO */
 .hero-wrapper {
@@ -79,6 +86,7 @@ h6 {
 
 .hero-wrapper h2 {
    font-weight: bold;
+   font-size: 2rem;
 }
 
 .hero-wrapper>h6 {
@@ -88,21 +96,23 @@ h6 {
 
 /* TOP IMAGE GALLERY */
 
+.image-gallery-wrapper {
+   box-sizing: border-box;
+   display: grid;
+   grid-template-columns: repeat(4, 20%);
+   grid-template-rows: 160px;
+   gap: 16px;
+   padding: 10px;
+   justify-content: center;
+}
+
 .image-gallery-item {
-   height: 200px;
-   width: 210px;
-   margin-right: 15px;
+   width: 100%;
+   height: 100%;
 }
 
-.image-gallery-left {
-   display: flex;
-   justify-content: end;
-   padding-right: 15px;
-}
-
-.image-gallery-right {
-   display: flex;
-   justify-content: start;
+.top-margin {
+   margin-top: 22px;
 }
 
 /* Mobile devicex */
@@ -123,15 +133,11 @@ h6 {
 }
 
 /* For tablets */
-@media (max-width: 992px) {
-
-   .image-gallery-left,
-   .image-gallery-right {
-      justify-content: center;
-   }
-
-   .no-right-margin {
-      margin-right: 0;
+@media (max-width: 769px) {
+   .image-gallery-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 180px);
+      grid-template-rows: repeat(2, 180px);
    }
 }
 
@@ -149,11 +155,16 @@ h6 {
    display: flex;
    justify-content: end;
    padding-right: 20px;
+   margin-bottom: 20px;
+   justify-content: center;
+   padding-right: 0;
 }
 
 .about-right>p {
    text-align: justify;
 }
+
+
 
 #about-image {
    width: 100%;
@@ -176,20 +187,13 @@ h6 {
    .about-right {
       max-width: 500px;
    }
-}
-
-@media (max-width: 992px) {
    .about-us-wrapper {
       grid-template-columns: auto;
       justify-content: center;
    }
-
-   .about-left {
-      margin-bottom: 20px;
-      justify-content: center;
-      padding-right: 0;
-   }
 }
+
+
 
 
 /********** ABOUT ENDS *********/
@@ -211,11 +215,9 @@ section>h2 {
 
 
 .hiw-wrapper {
-   display: grid;
-   grid-template-columns: auto auto auto auto;
-   grid-template-rows: auto;
+   display: flex;
+   flex-wrap: wrap;
    justify-content: center;
-   gap: 10px;
    padding-bottom: 40px;
 }
 
@@ -225,6 +227,7 @@ section>h2 {
    text-align: center;
    border: none;
    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+   margin: 10px;
 
 }
 
@@ -233,7 +236,7 @@ section>h2 {
 }
 
 .hiw-item>.card-body>.card-title {
-   font-size: 17px;
+   font-size: 14px;
 }
 
 
@@ -248,15 +251,14 @@ section>h2 {
 }
 
 /* For tablets */
-@media (max-width: 992px) {
-   body {
-      font-size: 16px;
-   }
+@media (max-width: 768px) {
 
    .hiw-wrapper {
       grid-template-columns: auto auto;
    }
-
+   .hiw-item>.card-body>.card-text {
+      font-size: 10px;
+   }
 }
 
 /* For mobile phones */
@@ -278,9 +280,9 @@ section>h2 {
 
 .news-item-wrapper {
    display: grid;
-   grid-template-columns: 50% 50%;
+   grid-template-columns: 350px 350px;
    gap: 15px;
-   justify-items: center;
+   justify-content: center;
 }
 
 .news-item {
@@ -316,7 +318,7 @@ section>h2 {
 }
 
 /* For tablets*/
-@media (max-width: 576px) {
+@media (max-width: 768px) {
    .news-item-wrapper {
       grid-template-columns: auto;
    }
@@ -346,7 +348,7 @@ section>h2 {
    }
 
    iframe {
-      max-width: 300px;
+      max-width: 350px;
    }
 
    .video-item {
@@ -397,14 +399,14 @@ iframe {
    border-bottom: none;
 }
 
-.info-item>a {
+.info-item> a {
    text-decoration: none;
    color: black;
 }
 
 #Footer {
    position: relative;
-   background: url('nysc-2.jpg');
+   background: url('https://abcreative1.github.io/NYSC/assets/images/nysc-2.jpg');
    background-size: cover;
    background-position: center;
    color: white;
@@ -434,7 +436,8 @@ iframe {
 .footer-item>a {
    color: white;
    text-decoration: none;
-   padding-top: 14px;
+   margin-top: 14px;
+   font-size: 15px;
 }
 
 .footer-item {
@@ -469,7 +472,7 @@ iframe {
    color: lightgray;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
    .footer-sections-wrapper {
       grid-template-columns: 100%;
    }
