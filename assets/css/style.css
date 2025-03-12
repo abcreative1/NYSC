@@ -18,7 +18,8 @@ body {
 
 .hero-wrapper,
 .image-gallery-wrapper,
-#about,
+#carouselExampleIndicators,
+#About_Us,
 #How-it-works,
 #Latest-news,
 #Video,
@@ -136,27 +137,22 @@ h6 {
       grid-template-columns: repeat(2, 180px);
       grid-template-rows: repeat(2, 180px);
       padding: 10px;
+
    }
 }
 
-/* Mobile devicex */
+/* Mobile device */
 @media (max-width: 481px) {
 
    .image-gallery-wrapper {
       grid-template-columns: auto;
       grid-template-rows: repeat(4, 180px);
+      display: none;
    }
 
    .cta-btn {
       padding: 12px;
    }
-
-   /* .image-gallery-left,
-   .image-gallery-right {
-      justify-content: center !important;
-      align-items: center;
-      flex-direction: column !important;
-   } */
 
    .image-gallery-item {
       margin: 10px 0 !important;
@@ -167,12 +163,31 @@ h6 {
 
 /********** TOP IMAGE GALLERY ENDS **********/
 
+
+#carouselExampleIndicators {
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+
+.carousel-item>img {
+   height: 220px;
+   border-radius: 15px;
+}
+
+@media (min-width: 481px) {
+   #carouselExampleIndicators {
+      display: none;
+   }
+
+}
+
+
 /********** ABOUT **********/
 
 .about-us-wrapper {
    display: grid;
    grid-template-columns: auto 45%;
-   gap: 15px;
+   gap: 30px;
 }
 
 .about-left {
@@ -180,8 +195,9 @@ h6 {
    justify-content: end;
    padding-right: 20px;
    margin-bottom: 20px;
-   justify-content: center;
+   /* justify-content: center; */
    padding-right: 0;
+
 }
 
 .about-right>p {
@@ -196,7 +212,7 @@ h6 {
    height: auto;
 }
 
-#about {
+#About_Us {
    padding-bottom: 40px;
    padding-top: 20px;
 }
@@ -237,8 +253,6 @@ section>h2 {
    padding-top: 20px;
 }
 
-
-
 .hiw-wrapper {
    display: flex;
    flex-wrap: wrap;
@@ -247,27 +261,31 @@ section>h2 {
 }
 
 .hiw-item {
-   height: 230px;
-   max-width: 250px;
+   max-height: 280px;
+   max-width: 210px;
    text-align: center;
    border: none;
    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
    margin: 10px;
+}
 
+.hiw-item > .card-body> {
+   display: flex !important;
+   flex-direction: row !important;
+   align-items: center;
+   align-content: center;
+   justify-content: center;
+   justify-items: center;
 }
 
 .hiw-item>.card-body>.card-text {
-   font-size: 12px;
+   font-size: 13px;
 }
 
 .hiw-item>.card-body>.card-title {
-   font-size: 14px;
+   font-size: 16px;
 }
 
-
-.card-title {
-   font-size: 20px;
-}
 
 .card-body>.fa {
    font-size: 50px;
@@ -282,9 +300,19 @@ section>h2 {
       grid-template-columns: auto auto;
    }
 
-   .hiw-item>.card-body>.card-text {
-      font-size: 10px;
+   .hiw-item {
+      max-width: 270px;
    }
+
+   .hiw-item>.card-body>.card-title {
+      font-size: 18px;
+   }
+
+   .hiw-item>.card-body>.card-text {
+      font-size: 14px;
+   }
+
+
 }
 
 /* For mobile phones */
@@ -431,6 +459,10 @@ iframe {
    color: black;
 }
 
+.info-item>a:hover {
+   color: green;
+}
+
 #Footer {
    position: relative;
    background: url('https://abcreative1.github.io/NYSC/assets/images/nysc-2.jpg');
@@ -509,17 +541,12 @@ iframe {
       display: grid;
       grid-template-columns: 100%;
       gap: 15px;
+      row-gap: 40px;
       justify-content: center;
    }
-}
 
-@media (max-width: 576px) {
-   #Info-section {
-      padding-top: 40px;
-      display: grid;
-      grid-template-columns: 100%;
-      gap: 15px;
-      justify-content: center;
+   .info-item {
+      /* margin-bottom: 30px; */
    }
 
    .call-to-action {
@@ -530,6 +557,39 @@ iframe {
 
    .call-to-action * {
       width: 100%;
+      margin-bottom: 15px;
+   }
+}
+
+.attribution {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   color: white;
+   background-color: darkgreen;
+   justify-content: space-between;
+   align-items: center;
+   padding-left: 5%;
+   padding-right: 5%;
+   padding-top: 20px;
+   padding-bottom: 20px;
+}
+
+.attribution>p {
+   margin-bottom: 0;
+   margin: 10px;
+}
+
+.attribution>p a {
+   text-decoration: none;
+   color: whitesmoke;
+}
+
+@media (max-width: 481px) {
+   .attribution{
+         justify-content: center;
+   }
+   .attribution>p {
       margin-bottom: 15px;
    }
 }
